@@ -1,21 +1,17 @@
 import './assets/App.css';
-import ServerButton from './components/ServerButton.js';
-import FileUpload from './components/FileUpload.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Let's Build Something Cool</h1>
+        <h1>Cyberinsurance Application</h1>
       </header>
       <main className="App-main">
         <section>
-          <h2>REST API Example: Get message from backend Node.js server</h2>
-          <ServerButton />
+          <h2>Apply Here</h2>
         </section>
         <section>
-          <h2>Webhook & Cloud Example: Upload a File to an AWS S3 bucket</h2>
-          <FileUpload />
+          <h2>See Status Here</h2>
         </section>
       </main>
       <footer className="App-footer">

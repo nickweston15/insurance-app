@@ -1,9 +1,3 @@
-I designed this to be my standard React app template.
+This app is a mock cyberinsurance application platform. It is not intended for actual use.
 
-This contains an example of two components.
-
-First, a REST API that contacts the backend Node.js server and displays a message
-from that endpoint when the button is clicked.
-
-Second, a webhook that posts a file uploaded by the user to an AWS S3 bucket when
-the user clicks the upload button.
+Here I use a full-stack JavaScript tech-stack (React + Node.js) to create an app where users apply for cyberinsurance, and the app asynchronously runs security risk assessments via webhooks that can flag the applicant as high-risk or potentially fraudulent.
