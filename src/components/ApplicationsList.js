@@ -6,15 +6,24 @@ function ApplicationsList({ applications }) {
   return (
     <div>
       <h2>Submitted Applications</h2>
-      <ul>
-        {applications.map((app) => (
-          <li key={app.id}>
-            <strong>{app.companyName}</strong><br />
-            Status: <em>{app.status}</em><br />
-            Risk Score: {app.riskScore ?? 'Pending'}
-          </li>
-        ))}
-      </ul>
+      <table className="applications-table">
+        <thead>
+          <tr>
+            <th>Company Name</th>
+            <th>Status</th>
+            <th>Risk Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {applications.map((app) => (
+            <tr key={app.id}>
+              <td><strong>{app.companyName}</strong></td>
+              <td><em>{app.status}</em></td>
+              <td>{app.riskScore ?? 'Pending'}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
