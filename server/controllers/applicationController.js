@@ -5,8 +5,8 @@ exports.create = (req, res) => {
 
   // Simulate webhook after 10 seconds
   setTimeout(() => {
-    const riskScore = Math.floor(Math.random() * 100); // Simple simulated risk
-    const status = riskScore > 70 ? 'flagged_for_review' : 'approved';
+    const riskScore = newApp.riskScore;
+    const status = riskScore < 70 ? 'Flagged' : 'Approved';
     appModel.updateApplicationStatus(newApp.id, status, riskScore);
     console.log(`Webhook simulated: App ${newApp.id} marked as ${status}`);
   }, 10000);

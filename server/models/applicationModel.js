@@ -5,12 +5,28 @@ function createApplication(data) {
   const newApp = {
     id: idCounter++,
     ...data,
-    status: 'pending_scan',
-    riskScore: null,
+    status: 'Pending',
+    riskScore: calculateRiskScore(data),
     submittedAt: new Date().toISOString(),
   };
   applications.push(newApp);
   return newApp;
+}
+
+function calculateRiskScore(data) {
+  const checkboxFields = [
+    'employeeTraining',
+    'dataEncryption',
+    'incidentResponse',
+    'highRiskIndustry',
+    'firewallSecurity',
+  ];
+
+  let checkedCount = 0;
+  for (const field of checkboxFields) {
+    if (data[field] === true || data[field] === 'on') checkedCount++;
+  }
+  return checkedCount * 20;
 }
 
 function getAllApplications() {

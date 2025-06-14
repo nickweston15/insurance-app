@@ -2,7 +2,7 @@ const appModel = require('../models/applicationModel');
 
 exports.handleSecurityScan = (req, res) => {
   const { applicationId, riskScore } = req.body;
-  const status = riskScore > 70 ? 'flagged_for_review' : 'approved';
+  const status = riskScore;
   const updatedApp = appModel.updateApplicationStatus(applicationId, status, riskScore);
 
   if (!updatedApp) return res.status(404).json({ message: 'Application not found' });
